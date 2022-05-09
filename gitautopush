@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ -z "$@" ]
+then
+	echo 'Nothing staged'
+	killall gitautopush
+else
+	true
+fi
+
+for staged in "$@"
+do
+	git add "$staged"
+done
+
+git status
+echo 'continue? [y,n]'
+read continue
+
+if [ "$continue" = "y" ]
+then
+	echo 'commit message'
+	read message
+	git commit -m "'$message'"
+	git push
+else
+	echo 'Canceled'
+fi
