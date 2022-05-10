@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$@" ]
 then
-	echo 'Nothing staged'
+	echo 'No files selected'
 	killall gitautopush
 else
 	true
@@ -13,12 +13,12 @@ do
 done
 
 git status
-echo 'continue? [y,n]'
+echo 'Continue? [y,n]'
 read continue
 
 if [ "$continue" = "y" ]
 then
-	echo 'commit message'
+	echo 'Commit Message:'
 	read message
 	git commit -m "'$message'"
 	git push
