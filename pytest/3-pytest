@@ -1,0 +1,8 @@
+#!/bin/python3
+import urllib.request
+
+response = urllib.request.urlopen("https://www.mit.edu/~ecprice/wordlist.10000")
+words = response.read().decode()
+
+
+print (words)

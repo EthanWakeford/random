@@ -1,0 +1,11 @@
+#!/bin/python3.8
+def this():
+    print ("eat this dick")
+def that():
+    print ("No I would not like any dick please and thank you")
+
+x = input("are you hungry?\n")
+if x == "yes":
+    this()
+else:
+    that()
